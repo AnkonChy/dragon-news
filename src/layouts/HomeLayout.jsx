@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
 import Navbar from "../components/Navbar";
 import LeftNavbar from "../components/layout-component/LeftNavbar";
 import RightNavbar from "../components/layout-component/RightNavbar";
 import { Outlet } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const HomeLayout = () => {
+  const data = useContext(AuthContext);
+  console.log(data);
   return (
     <div className="font-poppins">
       <Header></Header>

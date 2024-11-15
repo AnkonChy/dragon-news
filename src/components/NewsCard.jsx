@@ -3,6 +3,7 @@ import Rating from "react-rating";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar, FaRegEye, FaShareAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = (props = {}) => {
   const { singleNews } = props || {};
@@ -35,7 +36,12 @@ const NewsCard = (props = {}) => {
 
       <p className="text-sm text-gray-700 mb-3">
         {singleNews.details}
-        <span className="text-blue-500 cursor-pointer"> Read More</span>
+        <Link
+          to={`/news/${singleNews._id}`}
+          className="text-blue-500 cursor-pointer"
+        >
+          Read More
+        </Link>
       </p>
 
       <div className="flex items-center justify-between mt-4">
